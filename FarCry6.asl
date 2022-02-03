@@ -44,11 +44,6 @@ startup
     return (current.menuState == 1 && current.loading != 0);
 }*/
 
-exit
-{
-	timer.IsGameTimePaused = true;
-}
-
 shutdown
 {
     timer.OnStart -= vars.TimerStart;

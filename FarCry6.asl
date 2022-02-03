@@ -3,7 +3,7 @@
 state("FarCry6")
 {
 	int loading : "FC_m64d3d12.dll", 0x6F6B1DC;
-//    int menuState : "FC_m64d3d12.dll", 0x69F2B6C;
+//  int menuState : "FC_m64d3d12.dll", 0x69F2B6C;
 }
 
 isLoading
@@ -18,10 +18,7 @@ isLoading
 
 startup
   {
-        vars.TimerStart = (EventHandler) ((s, e) => timer.IsGameTimePaused = true);
-        timer.OnStart += vars.TimerStart;
-	  	refreshRate=30;
-		if (timer.CurrentTimingMethod == TimingMethod.RealTime)
+    	if (timer.CurrentTimingMethod == TimingMethod.RealTime)
 // Asks user to change to game time if LiveSplit is currently set to Real Time.
     {        
         var timingMessage = MessageBox.Show (
@@ -43,8 +40,3 @@ startup
 {
     return (current.menuState == 1 && current.loading != 0);
 }*/
-
-shutdown
-{
-    timer.OnStart -= vars.TimerStart;
-}

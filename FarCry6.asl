@@ -9,7 +9,7 @@ state("FarCry6")
 
 isLoading
 {
-	return current.loading == 0;
+	return current.loading != 0;
 }
 
 /*init

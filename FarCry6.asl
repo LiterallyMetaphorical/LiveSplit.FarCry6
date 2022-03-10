@@ -2,13 +2,13 @@
 
 state("FarCry6")
 {
-	int loading : "FC_m64d3d12.dll", 0x734EDC4;
+	int loading : "FC_m64d3d12.dll", 0x734EE44;
 //  int menuState : "FC_m64d3d12.dll", 0x69F2B6C;
 }
 
 isLoading
 {
-	return current.loading != 0;
+	return current.loading == 0;
 }
 
 /*init

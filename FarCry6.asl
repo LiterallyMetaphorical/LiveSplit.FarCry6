@@ -2,7 +2,7 @@
 
 state("FarCry6")
 {
-	int loading : "FC_m64d3d12.dll", 0x6F07D6C; // when searching for an address, try to find one that works across main game and DLC (including travel doorways in DLC)
+	int loading : "FC_m64d3d12.dll", 0x6D3E1DC; // when searching for an address, try to find one that works across main game and DLC (including travel doorways in DLC)
     // chances are for ^ loading - you'll want an address in the '6Fxxxx' region of memory, and it will be 0 in game and potentially '16777216' while loading
 //  int menuState : "FC_m64d3d12.dll", 0x69F2B6C;
 }

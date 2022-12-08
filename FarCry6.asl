@@ -1,21 +1,13 @@
-// Created by AlexYeahNot, Binslev, and Meta
+// Created by Binslev, AlexYeahNot, and Meta
+//game version 1.6.0
+//created on 06-12-2022
+//two pointers in the hopes that it works more better
 
 state("FarCry6")
 {
-	int loading : "FC_m64d3d12.dll", 0x6D3E1DC; // when searching for an address, try to find one that works across main game and DLC (including travel doorways in DLC)
-    // chances are for ^ loading - you'll want an address in the '6Fxxxx' region of memory, and it will be 0 in game and potentially '16777216' while loading
-//  int menuState : "FC_m64d3d12.dll", 0x69F2B6C;
+	int loading : 	"FC_m64d3d12.dll", 0x0717EE38, 0x28, 0xF0, 0x0, 0x68;
+	int loading1 : 	"FC_m64d3d12.dll", 0x06B4FB98, 0x20, 0x0, 0x68;
 }
-
-isLoading
-{
-	return current.loading != 0;
-}
-
-/*init
-{
-    vars.menuState = false;
-}*/
 
 startup
   {
@@ -37,7 +29,7 @@ startup
     }
   }
 
-/*start
+isLoading
 {
-    return (current.menuState == 1 && current.loading != 0);
-}*/
+	return (current.loading == 2 || current.loading1 == 2);
+}
